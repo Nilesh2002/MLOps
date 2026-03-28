@@ -145,8 +145,8 @@ with mlflow.start_run():
     print(f"Model saved as artifact at: {model_path}")
 
     # Upload to Hugging Face
-    repo_id = "nilku/tourism_pred_model"
-    repo_type = "model"
+    repo_id="nilku/Tourism-Packag-Prediction",
+    repo_type="model"
 
     # Step 1: Check if the space exists
     try:
@@ -157,7 +157,7 @@ with mlflow.start_run():
         create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
         print(f"Space '{repo_id}' created.")
 
-    # create_repo("churn-model", repo_type="model", private=False)
+    # create_repo("tourism-package-model", repo_type="model", private=False)
     api.upload_file(
         path_or_fileobj="best_tourism_pred_model_v1.joblib",
         path_in_repo="best_tourism_pred_model_v1.joblib",
