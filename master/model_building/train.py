@@ -144,9 +144,13 @@ with mlflow.start_run():
     print(f"Model saved as artifact at: {model_path}")
 
     # Upload to Hugging Face
-    repo_id="nilku/Tourism-Packag-Prediction"
-    repo_type="model"
+    repo_id = "nilku/tourism_pred_model"
+    repo_type = "model"
+    
+   
+    api = HfApi(token=os.getenv("HF_TOK"))
 
+    
     # Step 1: Check if the space exists
     try:
         api.repo_info(repo_id=repo_id, repo_type=repo_type)
@@ -154,7 +158,7 @@ with mlflow.start_run():
     except RepositoryNotFoundError:
         print(f"Space '{repo_id}' not found. Creating new space...")
         create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
-        print(f"Space '{repo_id}' created.")
+        print(f"Model '{repo_id}' created.")
 
     # create_repo("tourism-package-model", repo_type="model", private=False)
     api.upload_file(
