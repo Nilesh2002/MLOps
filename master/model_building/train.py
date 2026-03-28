@@ -64,7 +64,6 @@ categorical_features = [
 
 
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
-class_weight
 
 # Define the preprocessing steps
 preprocessor = make_column_transformer(
@@ -145,7 +144,7 @@ with mlflow.start_run():
     print(f"Model saved as artifact at: {model_path}")
 
     # Upload to Hugging Face
-    repo_id="nilku/Tourism-Packag-Prediction",
+    repo_id="nilku/Tourism-Packag-Prediction"
     repo_type="model"
 
     # Step 1: Check if the space exists
