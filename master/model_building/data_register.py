@@ -1,5 +1,5 @@
 import os
-from huggingface_hub import HfApi, create_repo, RepositoryNotFoundError
+from huggingface_hub import HfApi
 
 api = HfApi(token=os.getenv("HF_TOK"))
 
