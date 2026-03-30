@@ -4,8 +4,8 @@ from huggingface_hub import hf_hub_download
 import joblib
 
 # Download the model from the Model Hub
-# model_path = hf_hub_download(repo_id="nilku/tourism_pred_model", filename="best_tourism_pred_model_v1.joblib")
-model_path = hf_hub_download(repo_id="nilku/TourismPackagePrediction", filename="best_tourism_pred_model_v1.joblib")
+model_path = hf_hub_download(repo_id="nilku/tourism_pred_model", filename="best_tourism_pred_model_v1.joblib")
+#model_path = hf_hub_download(repo_id="nilku/TourismPackagePrediction", filename="best_tourism_pred_model_v1.joblib")
 
 # Load the model
 model = joblib.load(model_path)
@@ -80,5 +80,5 @@ classification_threshold = 0.45
 if st.button("Predict"):
     prediction_proba = model.predict_proba(input_data)[0, 1]
     prediction = (prediction_proba >= classification_threshold).astype(int)
-    result = "Product Taken" if prediction == 1 else "Product Not taken"
+    result = "Take Package" if prediction == 1 else "Decline Package"
     st.write(f"Based on the information provided, the customer is likely to {result}.")
