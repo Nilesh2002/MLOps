@@ -5,8 +5,8 @@ from huggingface_hub import create_repo
 
 api = HfApi(token=os.getenv("HF_TOK"))
 
-#repo_id = "nilku/Tourism-Packag-Prediction"
-repo_id = "nilku/TourismPackagePrediction"
+repo_id = "nilku/Tourism-Packag-Prediction"
+#repo_id = "nilku/TourismPackagePrediction"
 repo_type = "dataset" # Specify repo_type as dataset
 
 # Step 1: Check if the space exists
