@@ -21,11 +21,15 @@ mlflow.set_experiment("tourism-prod-experiment")
 
 api = HfApi()
 
+#Xtrain_path = "hf://datasets/nilku/Tourism-Packag-Prediction/Xtrain.csv"
+#Xtest_path = "hf://datasets/nilku/Tourism-Packag-Prediction/Xtest.csv"
+#ytrain_path = "hf://datasets/nilku/Tourism-Packag-Prediction/ytrain.csv"
+#ytest_path = "hf://datasets/nilku/Tourism-Packag-Prediction/ytest.csv"
 
-Xtrain_path = "hf://datasets/nilku/Tourism-Packag-Prediction/Xtrain.csv"
-Xtest_path = "hf://datasets/nilku/Tourism-Packag-Prediction/Xtest.csv"
-ytrain_path = "hf://datasets/nilku/Tourism-Packag-Prediction/ytrain.csv"
-ytest_path = "hf://datasets/nilku/Tourism-Packag-Prediction/ytest.csv"
+Xtrain_path = "hf://datasets/nilku/TourismPackagePrediction/Xtrain.csv"
+Xtest_path = "hf://datasets/nilku/TourismPackagePrediction/Xtest.csv"
+ytrain_path = "hf://datasets/nilku/TourismPackagePrediction/ytrain.csv"
+ytest_path = "hf://datasets/nilku/TourismPackagePrediction/ytest.csv"
 
 Xtrain = pd.read_csv(Xtrain_path)
 Xtest = pd.read_csv(Xtest_path)
