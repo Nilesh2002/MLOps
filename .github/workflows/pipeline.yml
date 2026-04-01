@@ -45,6 +45,12 @@ jobs:
         env:
           HF_TOK: ${{ secrets.HF_TOK }}
         run: python master/model_building/train.py
+        
+      - name: Save MLflow runs
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlruns
+          path: mlruns/
 
   deploy-hosting:
     runs-on: ubuntu-latest
